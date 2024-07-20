@@ -5,15 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Num guessing game</title>
     <link rel = "stylesheet" href="guessGame.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Lexend:wght@100..900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div id= "allContainer">
+    <div id= "header">
+        <h1>Bombastic Brain-numbing Number Game</h1>
+        <i class="material-icons" id = "setting">settings</i>
+    </div>
+    <div id = "features">
+        <div id = "lives" class = "middle">
         <h2>Lives Left:</h2>
-        <h3 id = "lives">5</h3>
+        <span>
+            <i class="material-icons" id = "heart">favorite</i>
+            <i class="material-icons" id = "heart">favorite</i>
+            <i class="material-icons" id = "heart">favorite</i>
+            <i class="material-icons" id = "heart">favorite</i>
+            <i class="material-icons" id = "heart">favorite</i>
+        </span>
         <button id = "hint">Hint</button>
-        <label>Your Guess:</label><br>
-        <input id = "guess">
-        <button type="submit" id = "guessSubmit">Submit</button>
+        </div>
+        <div id = "input" class = "middle">
+            <h2>Your Guess:</h2><br>
+            <input id = "guess">
+            <button type="submit" id = "guessSubmit">Submit</button>
+        </div>
+        <div id = "hintContainer" class = "middle">
+            <h2>Hint</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi sed doloribus ab quisquam excepturi, pariatur, corrupti perspiciatis perferendis consequuntur quas mollitia, neque inventore impedit earum autem natus consectetur laborum ratione!</p>
+        </div>
+    </div>
+
+
+    <div id = "range">
+        <h2>1</h2>
+        <div id = "gradient">
+        </div>
+        <h2>25</h2>
     </div>
 
 
