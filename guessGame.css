@@ -2,8 +2,31 @@
     box-sizing: border-box;
 }
 
-#heart{
+.material-icons{
     color:rgb(183, 16, 16);
+}
+
+label{
+    margin:3vw;
+}
+
+#min,#max{
+    margin:2vw;
+}
+
+#guess{
+    align-self: center;
+    text-align: center;
+    font-family: 'Lexend';
+    width: 70%;
+    height:20%;
+    font-size:2em;
+    border: 0.2rem solid rgb(167, 129, 81);
+    background-color: rgb(243, 224, 200);
+    border-radius: 3px;
+}
+#guess:focus{
+    border:none;
 }
 
 body{
@@ -26,6 +49,7 @@ h1{
 
 #setting{
     margin:2vw;
+    color:black;
 }
 .middle{
     display: flex;
@@ -37,6 +61,7 @@ h1{
 
 #range{
     height:10vh;
+
 }
 
 #lives{
