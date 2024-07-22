@@ -14,8 +14,7 @@ label{
     margin:2vw;
 }
 
-#guess{
-    align-self: center;
+.input{
     text-align: center;
     font-family: 'Lexend';
     width: 70%;
@@ -24,7 +23,14 @@ label{
     border: 0.2rem solid rgb(167, 129, 81);
     background-color: rgb(243, 224, 200);
     border-radius: 3px;
+
 }
+
+#guess{
+    align-self: center;
+   
+}
+
 #guess:focus{
     border:none;
 }
@@ -33,6 +39,8 @@ body{
     font-family:Lexend;
     margin:5vh;
     background-color: rgb(243, 224, 200);
+    display: grid;
+    justify-content: center;
 }
 
 h1{
@@ -51,6 +59,20 @@ h1{
     margin:2vw;
     color:black;
 }
+
+#setting:hover{
+    cursor:pointer;
+}
+
+@keyframes rotate{
+    100%{transform:rotateZ(180deg)}
+}
+
+#setting:active{
+    animation-name:rotate;
+    animation-duration:1s;
+}
+
 .middle{
     display: flex;
     flex-direction: column;
@@ -60,8 +82,9 @@ h1{
 }
 
 #range{
-    height:10vh;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #lives{
@@ -76,7 +99,7 @@ h1{
 
 #hintContainer{
     text-align: center;
-    background-color: rgb(236, 194, 200);
+    background-color: rgb(202, 194, 236);
 }
 
 
@@ -86,11 +109,6 @@ h1{
     flex-direction: row;
 }
 
-#range{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 #gradient{
     height:2vh;
@@ -108,5 +126,32 @@ button{
 }
 
 button:hover{
+    cursor:pointer;
     background-color: rgb(167, 129, 81);
 }
+
+.sidebar{
+    position:fixed;
+    height: 100vh;
+    width:20vw;
+    top: 0;
+    right: 0;
+    background-color: rgb(242, 193, 193);
+    overflow-y: auto;
+
+}
+.sidebarContent{
+    padding: 1.5vw;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.sidebar[aria-hidden="true"] {
+    transition: 200ms;
+    transform: translateX(100%);
+  }
+
+.sidebar[aria-hidden="false"] {
+    transition: 200ms;
+}
+
