@@ -31,7 +31,7 @@
         </div>
         <div id = "input" class = "middle">
             <h2>Your Guess:</h2><br>
-            <input id = "guess" class = "input">
+            <input type = "number" id = "guess" class = "input" min = 0>
             <button type="submit" id = "guessSubmit">Submit</button>
         </div>
         <div id = "hintContainer" class = "middle">
@@ -54,11 +54,11 @@
         <div class="sidebarContent">
             <span>
                 <h3>Change Min Value:</h3>
-                <input class = "input">
-                <button type = "submit">Submit</button>
+                <input class = "input" min = 0 type = "number" id = "inputMin">
+                <button type = "submit" onclick = "changeMin()">Submit</button>
                 <h3>Change Max Value:</h3>
-                <input class = "input">
-                <button type = "submit">Submit</button>
+                <input class = "input" min = 0 type = "number" id = "inputMax">
+                <button type = "submit"  onclick = "changeMax()">Submit</button>
             </span>
         </div>
     </div>
