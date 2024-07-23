@@ -1,11 +1,10 @@
-//https://dev.to/felipperegazio/creating-a-sidebar-with-html-css-and-js-1jep 
-//for side bar 
-
 let lives = 5;
 let guess;
-let ranNum = Math.floor(Math.random() * 25)+1;
 let gameMax = 25;
 let gameMin = 1;
+let ranNum = Math.floor(Math.random() * (gameMax - gameMin+1) ) + gameMin;
+
+
 
 const submit = document.getElementById("guessSubmit");
 const hint = document.getElementById("hint");
@@ -14,19 +13,29 @@ const title = document.getElementById("title");
 const max = document.getElementById("max");
 const min = document.getElementById("min");
 
-const heart1 = document.getElementById('heart1');
-const heart2 = document.getElementById('heart2');
-const heart3 = document.getElementById('heart3');
-const heart4 = document.getElementById('heart4');
-const heart5 = document.getElementById('heart5');
 
+//SETTINGS//
 
-console.log(ranNum);
+const inputMin = document.getElementById('inputMin');
+const inputMax = document.getElementById('inputMax');
+
+function changeMin(){
+    gameMin = Number(inputMin.value);    
+    min.textContent = gameMin;
+    ranNum = Math.floor(Math.random() * (gameMax - gameMin+1) ) + gameMin;
+
+}
+
+function changeMax(){
+    gameMax = Number(inputMax.value);
+    max.textContent = gameMax;
+    ranNum = Math.floor(Math.random() * (gameMax - gameMin+1) ) + gameMin;
+
+}
 
 submit.onclick = function(){
     guess = input.value;
     guess = Number(guess)
-    console.log(guess);
     if (isNaN(guess)){
         window.alert("enter valid number!");
     }
@@ -54,6 +63,8 @@ submit.onclick = function(){
 }
 
 
+//SIDEBAR//
+
 document.querySelectorAll('[data-toggle-sidebar]').forEach(toggle => {
     toggle.addEventListener('click', e => {
         const sidebarID = toggle.dataset.toggleSidebar;
@@ -63,3 +74,4 @@ document.querySelectorAll('[data-toggle-sidebar]').forEach(toggle => {
             sidebarElement.setAttribute('aria-hidden', sidebarState == 'true' ? false : true); }
         });
      });
+
