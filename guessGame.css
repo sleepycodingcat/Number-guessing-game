@@ -113,7 +113,7 @@ h1{
 #gradient{
     height:2vh;
     width:40vw;;
-    background-color: black;
+    background-image: linear-gradient(to right, rgb(253, 253, 150), rgb(225, 40, 83));
 }
 
 button{
