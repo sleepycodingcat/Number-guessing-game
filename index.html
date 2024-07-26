@@ -21,13 +21,10 @@
         <div id = "lives" class = "middle">
         <h2>Lives Left:</h2>
         <span>
-            <i class="material-icons" id = "heart1">favorite</i>
-            <i class="material-icons" id = "heart2">favorite</i>
-            <i class="material-icons" id = "heart3">favorite</i>
-            <i class="material-icons" id = "heart4">favorite</i>
-            <i class="material-icons" id = "heart5">favorite</i>
+            <!-- <i class="material-icons" id = "heart1">favorite</i> -->
+             <h2 id = "numLives">5</h2>
         </span>
-        <button id = "hint">Hint</button>
+        <button id = "hintBtn">Hint</button>
         </div>
         <div id = "input" class = "middle">
             <h2>Your Guess:</h2><br>
@@ -36,7 +33,7 @@
         </div>
         <div id = "hintContainer" class = "middle">
             <h2>Hint</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi sed doloribus ab quisquam excepturi, pariatur, corrupti perspiciatis perferendis consequuntur quas mollitia, neque inventore impedit earum autem natus consectetur laborum ratione!</p>
+            <p id = "hint"></p>
         </div>
     </div>
 
@@ -60,6 +57,7 @@
                 <input class = "input" min = 0 type = "number" id = "inputMax">
                 <button type = "submit"  onclick = "changeMax()">Submit</button>
             </span>
+            <h3 id = "settingMsg">Note: Hints are only avaliable for numbers 0-25</h3>
         </div>
     </div>
 
