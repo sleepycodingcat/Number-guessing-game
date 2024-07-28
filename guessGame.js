@@ -3,7 +3,6 @@ let guess;
 let gameMax = 25;
 let gameMin = 1;
 let ranNum = Math.floor(Math.random() * (gameMax - gameMin+1) ) + gameMin;
-console.log(ranNum);
 
 
 
@@ -33,11 +32,15 @@ function resetText(){
 
 function changeMin(){
     if (Number(inputMin.value) < 0){
-        window.alert("Enter a non-negative number!")
+        window.alert("Enter a non-negative number!");
     }
     else if (Number(inputMin.value) > gameMax){
-        settingMsg.textContent = "The minimum value can't be bigger than the maximum!"
-        setTimeout(resetText,2000)
+        settingMsg.textContent = "The minimum value can't be bigger than the maximum!";
+        setTimeout(resetText,2000);
+    }
+    else if (gameMax-Number(inputMin.value) <= 5){
+        settingMsg.textContent = "Wow, really going for the low risk game, huh? Boring!";
+        setTimeout(resetText,2000);
     }
     else{
         gameMin = Number(inputMin.value);    
@@ -46,14 +49,11 @@ function changeMin(){
         lives = 5;
         numLives.textContent = lives;
         settingMsg.textContent = "Game has been reset";
-        setTimeout(resetText,1000)
-        title.textContent = "Bombastic Brain-numbing Number Game"
+        setTimeout(resetText,1000);
+        title.textContent = "Bombastic Brain-numbing Number Game";
         hintBtn.style.display = "none";     
-        //add thing to make hint container disappear too!!
-
-
+        hintContainer.style.display = "none";  
     }
-
 }
 
 function changeMax(){
@@ -64,6 +64,10 @@ function changeMax(){
         settingMsg.textContent = "The maximum value can't be smaller than the minimum!"
         setTimeout(resetText,2000)
     }
+    else if (Number(inputMax.value)-gameMin <= 5){
+        settingMsg.textContent = "Wow, really going for the low risk game, huh? Boring!";
+        setTimeout(resetText,2000);
+    }
     else{
         gameMax = Number(inputMax.value);
         max.textContent = gameMax;
@@ -73,7 +77,8 @@ function changeMax(){
         settingMsg.textContent = "Game has been reset";
         setTimeout(resetText,2000);
         title.textContent = "Bombastic Brain-numbing Number Game"
-        hintBtn.style.display = "none";     
+        hintBtn.style.display = "none";   
+        hintContainer.style.display = "none";  
     }
 }
 
@@ -118,7 +123,7 @@ submit.onclick = function(){
 
     
 
-    if (lives<2){
+    if (lives<2 && (0 <= ranNum && ranNum<= 25)){
         hintBtn.style.display = "block";        
     }
 }
