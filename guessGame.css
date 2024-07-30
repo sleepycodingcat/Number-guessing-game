@@ -6,33 +6,20 @@
     color:rgb(183, 16, 16);
 }
 
-.material-icons{
-    color:rgb(183, 16, 16);
-}
-
-label{
-    margin:3vw;
-}
-
-#min,#max{
-    margin:2vw;
-}
-
 .input{
     text-align: center;
     font-family: 'Lexend';
-    width: 70%;
-    height:20%;
-    font-size:2em;
     border: 0.2rem solid rgb(167, 129, 81);
     background-color: rgb(243, 224, 200);
-    border-radius: 3px;
+    width: 50%;
+    height:20%;
+    font-size: clamp(1rem,2rem,2rem);
 
 }
 
 #guess{
     align-self: center;
-   
+    justify-content: center;
 }
 
 #guess:focus{
@@ -40,14 +27,26 @@ label{
 }
 
 body{
+    margin: 20px 20px;
     font-family:Lexend;
-    margin:5vh;
     background-color: rgb(243, 224, 200);
     display: grid;
     justify-content: center;
 }
 
+#settingContainer{
+    margin: 0px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
 h1{
+    font-size: 2rem;
+    @media only screen and (max-width: 600px) {
+        font-size: 1.5rem;
+    }
+    text-align: center;
+    margin: 8px 10px;
     font-family:Permanent Marker;
 }
 
@@ -55,12 +54,9 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    height:20vh;
-    
 }
 
 #setting{
-    margin:2vw;
     color:black;
 }
 
@@ -78,14 +74,20 @@ h1{
 }
 
 .middle{
+    width:50vw;
+    height:35vh;
     display: flex;
     flex-direction: column;
-    width:50vw;
-    padding:2vw;
-    height:50vh;
+}
+
+#closeContainer{
+    padding: 10px;
+    display:flex;
+    align-items: flex-start;
 }
 
 #range{
+    margin:15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,9 +104,13 @@ h1{
 }
 
 #hintContainer{
+    padding:5px 0;
     display: none;
     text-align: center;
     background-color: rgb(202, 194, 236);
+    grid-column-start: span 2;
+    width: 100%;
+    height:fit-content
 }
 
 #hintBtn{
@@ -113,26 +119,30 @@ h1{
 
 
 #features{
-    width:90vw;
-    display: flex;
-    flex-direction: row;
+    margin: 10px 0;
+    width:100vw;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
 }
 
 
 #gradient{
-    height:2vh;
-    width:40vw;;
+    width: 25vw;
+    height: 10px;
     background-image: linear-gradient(to right, rgb(253, 253, 150), rgb(225, 40, 83));
 }
 
 button{
+    width:fit-content;
+    padding:5px 10px;
+    margin:2vh 0;
+    align-self: center;
     text-align:center;
     border-radius: 3px;
     font-family: Lexend;
     background-color: burlywood;
     border:none;
-    margin:2vw;
-    height:2vw;
 }
 
 button:hover{
@@ -141,9 +151,13 @@ button:hover{
 }
 
 .sidebar{
+    padding:0px 15px;
     position:fixed;
     height: 100vh;
-    width:20vw;
+    width:30vw;
+    @media only screen and (max-width: 600px) {
+        width:100vw;
+    }
     top: 0;
     right: 0;
     background-color: rgb(242, 193, 193);
@@ -151,7 +165,6 @@ button:hover{
 
 }
 .sidebarContent{
-    padding: 1.5vw;
     overflow-x: hidden;
     text-align: center;
 }
@@ -163,5 +176,9 @@ button:hover{
 
 .sidebar[aria-hidden="false"] {
     transition: 200ms;
+}
+
+#max, #min{
+    margin: 0 20px;
 }
 
