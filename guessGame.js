@@ -115,8 +115,6 @@ submit.onclick = function(){
         }
 
 
-        //heart1.style.display = "none"; //figure out how to make each heart go
-
     }
 
     //HINT SYSTEM
@@ -156,7 +154,7 @@ let numHints = ["This number likes to confuse calculators",
 
 hintBtn.onclick = function(){
     hintP.textContent = numHints[ranNum];
-    hintContainer.style.display = "block";
+    hintContainer.style.display = "flex";
 }
 
 
